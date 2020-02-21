@@ -15,4 +15,4 @@ EOF
 
 curl -X POST -H "Content-Type: application/json" \
  -d "$(generate_post_data)" \
- http://DEEZLOADERRMIXIPPORT/api/download/
+ http://DEEZSERVER/api/download/
