@@ -19,8 +19,8 @@ COPY friday-0 /etc/periodic/friday/friday-0
 
 RUN cat /tmp/deezvars
 
-RUN sed -i "s/DEEZQUALITY/${DEEZQUALITY}/g" /etc/periodic/friday/friday-0
-RUN sed -i 's/DEEZLOADERRMIXIPPORT/${DEEZSERVER}/g' /etc/periodic/friday/friday-0
+RUN sed -i "s/DEEZQUALITY/$DEEZQUALITY/g" /etc/periodic/friday/friday-0
+RUN sed -i 's/DEEZLOADERRMIXIPPORT/$DEEZSERVER/g' /etc/periodic/friday/friday-0
 
 RUN cat /etc/periodic/friday/friday-0
 
