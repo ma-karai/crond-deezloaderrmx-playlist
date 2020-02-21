@@ -9,7 +9,9 @@ RUN mkdir -p /etc/periodic/friday
 
 RUN echo  $'\n\
   #!/bin/bash\n\
+  test \n\
   foo test test test hallotest test test test  \n\
+  test \n'\
   >>  /etc/periodic/friday/friday-0
 
 # replace word with the ips and stuff
