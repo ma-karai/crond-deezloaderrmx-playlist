@@ -8,11 +8,11 @@ ENV DEEZSERVER=192.168.0.104:1732
 
 RUN mkdir -p /etc/periodic/friday
 
-RUN cat > /etc/periodic/friday/friday-0 <<'EOF' \
-    its great \
-    server ip $DEEZSERVER \
-    and should stay that way \
-EOF
+RUN echo 'All of your\n\
+multiline that you ever wanted\n\
+into $DEEZSERVER dockerfile\n'\
+>> /etc/periodic/friday/friday-0
+
 
 RUN chmod +x /etc/periodic/friday/friday-0
 
