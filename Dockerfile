@@ -11,7 +11,7 @@ RUN export DEEZSERVER
 RUN export DEEZPLAYLIST
 
 # testing because noob
-RUN echo "DEEZPLAYLIST" >> /tmp/playlisturl
+RUN echo "$DEEZPLAYLIST" >> /tmp/playlisturl
 #RUN echo "var2=$DEEZSERVER" >> /tmp/deezvars
 RUN cat /tmp/playlisturl
 
