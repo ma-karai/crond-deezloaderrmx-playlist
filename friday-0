@@ -1,0 +1,18 @@
+#!/bin/sh
+now=$(date +%F_%T)
+echo "$now - weekly lists updated" >> /tmp/deezerupdates
+
+generate_post_data()
+{
+  cat <<EOF
+{
+  "quality": "DEEZQUALITY",
+  "url": ["https://www.deezer.com/en/playlist/5158987484",
+          "https://www.deezer.com/en/playlist/1043463931"]
+}
+EOF
+}
+
+curl -X POST -H "Content-Type: application/json" \
+ -d "$(generate_post_data)" \
+ http://DEEZLOADERRMIXIPPORT/api/download/
