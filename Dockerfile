@@ -4,12 +4,14 @@ RUN apk add --no-cache curl
 
 ENV DEEZQUALITY FLAC
 ENV DEEZSERVER 192.168.0.104:1732
+ENV DEEZPLAYLIST "https://www.deezer.com/en/playlist/5158987484","https://www.deezer.com/en/playlist/1043463931"
 
 RUN export DEEZQUALITY
 RUN export DEEZSERVER 
+RUN export DEEZPLAYLIST
 
 # testing because noob
-#RUN echo "var1=$DEEZQUALITY" >> /tmp/deezvars
+#RUN echo "DEEZPLAYLIST" >> /tmp/playlisturl
 #RUN echo "var2=$DEEZSERVER" >> /tmp/deezvars
 #RUN cat /tmp/deezvars
 
@@ -22,6 +24,7 @@ COPY friday-0 /etc/periodic/friday/friday-0
 # replace    placeholder $quality or $ip
 RUN sed -i "s/DEEZQUALITY/$DEEZQUALITY/g" /etc/periodic/friday/friday-0
 RUN sed -i "s/DEEZSERVER/$DEEZSERVER/g" /etc/periodic/friday/friday-0
+RUN sed -i "s/DEEZPLAYLIST/$DEEZPLAYLIST/g" /etc/periodic/friday/friday-0
 
 RUN cat /etc/periodic/friday/friday-0
 
