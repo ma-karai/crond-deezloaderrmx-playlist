@@ -9,10 +9,11 @@ RUN mkdir -p /etc/periodic/friday
 
 RUN echo  $'\n\
   #!/bin/bash\n\
-  foo $DEEZSERVER or ${DEEZSERVER} \n\
-  bar $DEEZSERVERTEST or ${DEEZSERVERTEST} \n'\
+  foo test test test hallotest test test test  \n\
   >>  /etc/periodic/friday/friday-0
 
+# replace word with the ips and stuff
+RUN sed -i 's/hallotest/${DEEZSERVER}/g' /etc/periodic/friday/friday-0
 
 RUN chmod +x /etc/periodic/friday/friday-0
 
