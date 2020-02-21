@@ -11,9 +11,9 @@ RUN export DEEZSERVER
 RUN export DEEZPLAYLIST
 
 # testing because noob
-#RUN echo "DEEZPLAYLIST" >> /tmp/playlisturl
+RUN echo "DEEZPLAYLIST" >> /tmp/playlisturl
 #RUN echo "var2=$DEEZSERVER" >> /tmp/deezvars
-#RUN cat /tmp/deezvars
+RUN cat /tmp/playlisturl
 
 
 RUN mkdir -p /etc/periodic/friday
@@ -24,7 +24,7 @@ COPY friday-0 /etc/periodic/friday/friday-0
 # replace    placeholder $quality or $ip
 RUN sed -i "s/DEEZQUALITY/$DEEZQUALITY/g" /etc/periodic/friday/friday-0
 RUN sed -i "s/DEEZSERVER/$DEEZSERVER/g" /etc/periodic/friday/friday-0
-RUN sed -i "s/DEEZPLAYLIST/$DEEZPLAYLIST/g" /etc/periodic/friday/friday-0
+RUN sed -r "s/DEEZPLAYLIST/$DEEZPLAYLIST/g" /etc/periodic/friday/friday-0
 
 RUN cat /etc/periodic/friday/friday-0
 
