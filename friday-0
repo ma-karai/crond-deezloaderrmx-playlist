@@ -7,8 +7,7 @@ generate_post_data()
   cat <<EOF
 {
   "quality": "DEEZQUALITY",
-  "url": ["https://www.deezer.com/en/playlist/5158987484",
-          "https://www.deezer.com/en/playlist/1043463931"]
+  "url": [DEEZPLAYLIST]
 }
 EOF
 }
