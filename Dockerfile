@@ -12,7 +12,8 @@ RUN mkdir -p /etc/periodic/friday
 # replace word with the ips and stuff
 COPY friday-0 /etc/periodic/friday/friday-0
 
-RUN sed -i 's/DEEZQUALITY/${DEEZQUALITY}/g' /etc/periodic/friday/friday-0
+
+RUN sed -i "s/DEEZQUALITY/${DEEZQUALITY}/g" /etc/periodic/friday/friday-0
 RUN sed -i 's/DEEZSERVER/${DEEZSERVER}/g' /etc/periodic/friday/friday-0
 
 RUN cat /etc/periodic/friday/friday-0
