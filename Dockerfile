@@ -5,6 +5,9 @@ RUN apk add --no-cache curl
 ENV DEEZQUALITY FLAC
 ENV DEEZSERVER 192.168.0.104:1732
 
+RUN export DEEZQUALITY
+RUN export DEEZSERVER 
+
 RUN echo "var1=$DEEZQUALITY" >> /tmp/deezvars
 RUN echo "var2=$DEEZSERVER" >> /tmp/deezvars
 
