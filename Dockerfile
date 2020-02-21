@@ -8,10 +8,10 @@ ENV DEEZSERVER=192.168.0.104:1732
 
 RUN mkdir -p /etc/periodic/friday
 
-RUN echo 'All of your\n\
+RUN echo $'All of your\n\
 multiline that you ever wanted\n\
-into $DEEZSERVER dockerfile\n'\
->> /etc/periodic/friday/friday-0
+into a dockerfile\n'\
+>>  /etc/periodic/friday/friday-0
 
 
 RUN chmod +x /etc/periodic/friday/friday-0
