@@ -17,6 +17,7 @@ RUN echo  $'\n\
 # replace word with the ips and stuff
 RUN sed -i 's/hallotest/${DEEZSERVER}/g' /etc/periodic/friday/friday-0
 
+RUN cat /etc/periodic/friday/friday-0
 RUN chmod +x /etc/periodic/friday/friday-0
 
 RUN echo "0       8       *       *       5       run-parts /etc/periodic/friday" >> /var/spool/cron/crontabs/root
