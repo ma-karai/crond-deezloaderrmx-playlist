@@ -25,7 +25,7 @@ COPY friday-0 /etc/periodic/friday/friday-0
 RUN sed -i "s/DEEZQUALITY/$DEEZQUALITY/g" /etc/periodic/friday/friday-0
 RUN sed -i "s/DEEZSERVER/$DEEZSERVER/g" /etc/periodic/friday/friday-0
 #RUN sed -r "s/DEEZPLAYLIST/$DEEZPLAYLIST/g" /etc/periodic/friday/friday-0
-RUN sed -i "s/DEEZPLAYLIST/$(cat /tmp/playlisturl)/g" /etc/periodic/friday/friday-0
+RUN sed -i "s/DEEZPLAYLIST/$(sed 's:/:\\/:g' /tmp/playlisturl)/" /etc/periodic/friday/friday-0 
 
 
 RUN cat /etc/periodic/friday/friday-0
