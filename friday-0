@@ -6,9 +6,9 @@ generate_post_data()
 {
   cat <<EOF
 {
-  "quality": "DEEZQUALITY",
+  "quality": "$DEEZQUALITY",
   "url": [
-  DEEZPLAYLIST
+  $DEEZPLAYLIST
   ]
 }
 EOF
@@ -16,4 +16,4 @@ EOF
 
 curl -X POST -H "Content-Type: application/json" \
  -d "$(generate_post_data)" \
- http://DEEZSERVER/api/download/
+ http://$DEEZSERVER/api/download/
