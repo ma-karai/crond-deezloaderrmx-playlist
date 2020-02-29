@@ -1,6 +1,7 @@
 #!/bin/sh
 now=$(date +%F_%T)
 echo "$now - weekly lists updated - $DEEZPLAYLIST with $DEEZQUALITY has been send to $DEEZSERVER" >> /tmp/deezerupdates
+echo "$now - weekly lists updated - $DEEZPLAYLIST with $DEEZQUALITY has been send to $DEEZSERVER" >> /var/log/deezerupdates.log
 
 generate_post_data()
 {
