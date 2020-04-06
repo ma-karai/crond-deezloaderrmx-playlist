@@ -8,7 +8,8 @@ ENV DEEZPLAYLIST "https://www.deezer.com/en/playlist/5158987484","https://www.de
 
 RUN export DEEZQUALITY
 RUN export DEEZSERVER 
-RUN export DEEZPLAYLIST
+RUN export DEEZPLAYLISTFRIDAY
+RUN export DEEZPLAYLISTDAILY
 
 # testing because noob
 #RUN echo "$DEEZPLAYLIST" >> /tmp/playlisturl
