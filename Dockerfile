@@ -16,11 +16,12 @@ RUN export DEEZPLAYLIST
 #RUN cat /tmp/playlisturl
 
 
-RUN touch /etc/periodic/daily/daily-0
+#RUN touch /etc/periodic/daily/daily-0
 RUN mkdir -p /etc/periodic/friday
 
 # replace word with the ips and stuff
 COPY friday-0 /etc/periodic/friday/friday-0
+COPY daily-0 /etc/periodic/daily/daily-0
 
 # replace    placeholder $quality or $ip
 #RUN sed -i "s/DEEZQUALITY/$DEEZQUALITY/g" /etc/periodic/friday/friday-0
