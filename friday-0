@@ -11,7 +11,7 @@ generate_post_data()
 {
   "quality": "$DEEZQUALITY",
   "url": [
-  $DEEZPLAYLIST
+  $DEEZPLAYLISTFRIDAY
   ]
 }
 EOF
