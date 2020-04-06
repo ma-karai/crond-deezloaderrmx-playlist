@@ -16,6 +16,7 @@ RUN export DEEZPLAYLIST
 #RUN cat /tmp/playlisturl
 
 
+RUN touch /etc/periodic/daily/daily-0
 RUN mkdir -p /etc/periodic/friday
 
 # replace word with the ips and stuff
