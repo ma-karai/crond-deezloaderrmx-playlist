@@ -1,0 +1,22 @@
+#!/bin/sh
+now=$(date +%F_%T)
+echo "$now - weekly lists updated - $DEEZPLAYLIST with $DEEZQUALITY has been send to $DEEZSERVER" >> /tmp/deezerupdates
+echo "$now - weekly lists updated - $DEEZPLAYLIST with $DEEZQUALITY has been send to $DEEZSERVER" >> /var/log/deezerupdates.log
+cat /var/log/deezerupdates.log 2>&1
+
+
+generate_post_data()
+{
+  cat <<EOF
+{
+  "quality": "$DEEZQUALITY",
+  "url": [
+  $DEEZPLAYLISTDAILY
+  ]
+}
+EOF
+}
+
+curl -X POST -H "Content-Type: application/json" \
+ -d "$(generate_post_data)" \
+ http://$DEEZSERVER/api/download/
